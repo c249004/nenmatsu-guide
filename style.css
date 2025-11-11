@@ -1,0 +1,162 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #f8f8f8;
+}
+
+#form-container {
+  position: relative;
+  display: inline-block;
+}
+
+#form-image {
+  width: 900px;
+  height: auto;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+.hint-area {
+  position: absolute;
+  background: rgba(255, 255, 0, 0.25); /* 少し濃い黄色の半透明 */
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.hint-area:hover {
+  background: rgba(255, 255, 0, 0.5); /* マウスが乗ったときは濃くなる */
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  max-width: 240px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
+#guide-character {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: left;
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  display: flex;             /* ← 吹き出しとキャラを横並びにする */
+  align-items: flex-end;     /* ← 下のラインを揃える */
+  gap: 10px;                 /* ← 吹き出しとキャラの間にすき間 */
+  transform: scale(1.5); /* ← ここで全体を拡大！ */
+  transform-origin: bottom right; /* 拡大の基準点を右下に */
+  z-index: 1000;
+}
+
+#guide-img {
+  width: 120px;   /* 元が80pxくらいなら、ここで調整可能 */
+  height: auto;
+}
+/* 🌼 ガイド吹き出し設定 */
+#guide-speech {
+  background: #fff8dc;
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  width: 300px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: fadeIn 0.5s ease;
+  max-width: 360px; /* ← 少し広くする（300→360） */
+  white-space: normal; /* ← 自動で折り返しする */
+  word-wrap: break-word; /* 長い単語も折り返す */
+  line-height: 1.6; /* 行間を広げて読みやすく */
+  display: inline-block; /* または block にする */
+  /* 👇縦に伸びすぎるのを防止！ */
+  max-height: 120px;   /* 吹き出しの最大の高さ（調整可） */
+  overflow-y: auto;    /* はみ出したら縦スクロールにする */
+  scrollbar-width: thin; /* スクロールバーを細く */
+}
+
+#guide-speech::-webkit-scrollbar-thumb:hover {
+  background: #ffca28; /* ホバー時に少し濃い黄色に */
+}
+
+/* ふわっと出るアニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌸 令和8年分ガイドボックス */
+.guide-note {
+  background: #fff8dc; /* 明るいクリーム色 */
+  border-left: 6px solid #fbc02d; /* 左にアクセントカラー */
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 30px auto;
+  width: 80%;
+  max-width: 700px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s ease;
+  transition: opacity 0.5s ease;/* 自然なフェード */
+}
+
+.guide-note h4 {
+  color: #c49000;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.guide-note p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.guide-note strong {
+  color: #d17f00;
+}
+
+.guide-note em {
+  color: #6b4f00;
+  font-style: normal;
+  background: rgba(255, 245, 157, 0.5);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+
+
+/* 戻るボタンの設定 */
+.back-btn-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-btn {
+  position: fixed;
+  bottom: 20px;     /* 画面の下から20px */
+  left: 50px;       /* 画面の左から20px */
+  background: #1976d2;
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+  z-index: 2000; /* ← ガイドよりも上に表示！ */
+}
+
+.back-btn:hover {
+  background-color: #dceaf5;      /* ホバー時：青みの淡色 */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+

@@ -1,0 +1,25 @@
+🅰 Pythonを使う場合
+
+フォルダで右クリック → 「ターミナルで開く」
+そして以下を入力：
+
+python -m http.server 8000
+
+
+出たURL（例：
+👉 http://localhost:8000
+）をブラウザで開くと完璧！
+
+🅱 VSCodeを使う場合
+
+拡張機能「Live Server」を入れて
+→ index.html を右クリック → 「Open with Live Server」✨
+
+
+💡 サーバーをやめたいとき
+
+止めたくなったら、ターミナルで
+Ctrl + C
+を押すだけでサーバーが終了します。
+
+（「KeyboardInterrupt」と出たらOKです。）

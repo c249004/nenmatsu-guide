@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>年末調整 記入ガイド</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      background: linear-gradient(#fffdf5, #f8f3e7);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #c4cced;
+      color: #333;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .guide-card {
+      background: #fff;
+      width: 280px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    /* guide-card img */
+    .guide-card img {
+      width: 100%;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+
+    /* guide-card中身のスタイル */
+    .guide-card h3 {
+      font-size: 18px;
+      margin: 12px 0 6px;
+    }
+
+    /* guide-card中身のスタイル */
+    .guide-card p {
+      font-size: 14px;
+      color: #666;
+      padding: 0 16px 16px;
+      line-height: 1.6;
+    }
+
+    /* guide-card全体のレイアウト */
+    .guide-card {
+      display: flex;
+      /* フレックスボックスで整列 */
+      flex-direction: column;
+      /* 中身を縦方向に並べる */
+      justify-content: flex-end;
+      /* 下に寄せる（ここがポイント） */
+      align-items: center;
+      /* 横方向中央揃え */
+      text-align: center;
+      /* 準備看板をcardの中のみにする */
+      position: relative;
+      /* 準備看板はみ出し防止 */
+      overflow: hidden;
+
+    }
+
+    /* 「準備中」という半透明の看板 */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 150, 0.7);
+      /* やわらかい黄色の半透明 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      font-weight: bold;
+      color: #444;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+      border: 2px dashed #f7d23e;
+      border-radius: 12px;
+      pointer-events: none;
+      /* auto;クリック無効（none;にすると下のカード操作は可能） */
+
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 10px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <header>📘 年末調整 記入ガイド</header>
+
+  <main>
+    <h2>どの申告書のガイドを見ますか？</h2>
+
+    <div class="card-container">
+      <!-- 基礎控除申告書 -->
+      <a href="kiso.html" class="guide-card">
+        <img src="kiso_thumb.png" alt="基礎控除申告書">
+        <h3>基礎控除申告書</h3>
+        <p>あなたの所得に応じて、税金が安くなる基本の申告書です</p>
+      </a>
+      <!-- 保険料控除申告書 -->
+      <a href="hoken.html" class="guide-card">
+        <img src="hoken_thumb.png" alt="保険料控除申告書">
+        <h3>保険料控除申告書</h3>
+        <p>生命保険や地震保険などを申告して、税金を安くするための書類です</p>
+      </a>
+      <!-- 扶養控除等申告書 -->
+      <a href="fuyou.html" class="guide-card">
+        <img src="fuyou_thumb.png" alt="扶養控除等（異動）申告書">
+        <h3>扶養控除等（異動）申告書</h3>
+        <p>扶養している家族を申告して、税金を安くするための書類です</p>
+      </a>
+      <!-- 住宅借入金等特別控除申告書（準備中） -->
+      <div class="guide-card">
+        <a href="jutaku.html">
+          <img src="jutaku_thumb.png" alt="住宅借入金等特別控除申告書">
+          <h3>住宅借入金等特別控除申告書</h3>
+          <p>住宅ローンで家を購入後、所得税の控除を受けるための書類です</p>
+        </a>
+        </div><!-- 準備中看板<div class="overlay">準備中 -->
+      </div>
+
+
+    </div>
+  </main>
+
+  <footer>
+    © 2025 年末調整ガイド | 開発：47アシスタント
+  </footer>
+</body>
+
+</html>

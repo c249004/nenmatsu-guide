@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>住宅借入金等特別控除申告書とは？</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 🌼 ページ固有の調整 */
+    #main-image {
+      width: 80%;
+      max-width: 700px;
+      border: 3px solid #ffd700;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      display: block;
+      margin: 20px auto;
+    }
+
+    .guide-note {
+      background: #fff8dc;
+      border: 2px solid #ffd700;
+      border-radius: 12px;
+      padding: 10px;
+      margin: 20px auto;
+      max-width: 600px;
+      line-height: 1.6;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      position: relative;
+      transition: opacity 1s ease;
+    }
+
+    .guide-note.fade-out {
+      opacity: 0.3;
+    }
+
+    h2, h3 {
+      color: #b8860b;
+      text-align: center;
+    }
+
+    ul {
+      margin-left: 30px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>🏠 住宅借入金等特別控除申告書とは？</h2>
+
+    <div class="guide-note">
+      住宅ローンを利用してマイホームを購入した方が、税金を軽くできる制度です。  
+      「住宅ローン控除」とも呼ばれます。  
+      年末調整で提出するのは、2年目以降の方です。
+    </div>
+
+    <img id="main-image" src="jutaku_form.png" alt="住宅借入金等特別控除申告書の見本">
+
+    <div class="guide-note">
+      初年度（ローンを組んだ年の翌年）は「確定申告」で手続き。  
+      2年目以降は、会社にこの用紙を提出します。
+    </div>
+
+    <h3>📅 記入のポイント</h3>
+    <ul>
+      <li>ローン契約者本人の情報を記入します。</li>
+      <li>年末残高は金融機関の「年末残高証明書」を見ながら転記します。</li>
+      <li>控除期間が終わったら、この書類の提出は不要になります。</li>
+    </ul>
+
+    <h3>💡 よくある質問</h3>
+    <ul>
+      <li>配偶者の名義でも控除できる？ → 条件を満たす場合は可能です。</li>
+      <li>転職したら？ → 新しい勤務先に再度提出しましょう。</li>
+      <li>2年目以降も税務署から毎年送られてきます。</li>
+    </ul>
+  </div>
+
+  <script>
+    // 🌼 すべての guide-note をフェードアウトさせる
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.guide-note').forEach(note => {
+          note.classList.add('fade-out');
+        });
+      }, 4000); // 4秒後にフェード開始
+    });
+  </script>
+</body>
+</html>
